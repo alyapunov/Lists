@@ -160,8 +160,8 @@ public:
         explicit iterator_common(TRing* aRing) : m_Ring(aRing) {}
         TItem& operator*() const { return *item(m_Ring); }
         TItem* operator->() const { return item(m_Ring); }
-        bool operator==(const iterator_common& aItr) { return m_Ring == aItr.m_Ring; }
-        bool operator!=(const iterator_common& aItr) { return m_Ring != aItr.m_Ring; }
+        bool operator==(const iterator_common& aItr) const { return m_Ring == aItr.m_Ring; }
+        bool operator!=(const iterator_common& aItr) const { return m_Ring != aItr.m_Ring; }
         iterator_common& operator++() { m_Ring = m_Ring->m_Neigh[1]; return *this; }
         iterator_common operator++(int) { iterator_common aTmp = *this; m_Ring = m_Ring->m_Neigh[1]; return aTmp; }
         iterator_common& operator--() { m_Ring = m_Ring->m_Neigh[0]; return *this; }
